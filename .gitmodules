@@ -1,5 +1,0 @@
-
-[submodule "bundle/vundle"]
-    path = bundle/vundle
-    url = git://github.com/gmarik/bundle.git
-

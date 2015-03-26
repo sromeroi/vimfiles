@@ -22,26 +22,26 @@ filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
-
-Plugin "myusuf3/numbers.vim"
-Plugin "majutsushi/tagbar" 
-Plugin "godlygeek/tabular"
-Plugin "Townk/vim-autoclose"
-Plugin "scrooloose/nerdcommenter"
-Plugin "scrooloose/syntastic"
-Plugin "joonty/vdebug"
-Plugin "mileszs/ack.vim"
-Plugin "vim-scripts/Command-T"
-Plugin "kien/ctrlp.vim"
-Plugin "sjl/gundo.vim"
-Plugin "scrooloose/nerdtree"
-Plugin "garbas/vim-snipmate"
-Plugin "ervandew/supertab"
-Plugin "vim-scripts/TaskList.vim"
-Plugin "altercation/vim-colors-solarized"
-Plugin "tomtom/tlib_vim"
-Plugin "MarcWeber/vim-addon-mw-utils"
-Plugin "garbas/vim-snipmate"
+Plugin 'myusuf3/numbers.vim'
+Plugin 'majutsushi/tagbar' 
+Plugin 'godlygeek/tabular'
+Plugin 'Townk/vim-autoclose'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/syntastic'
+Plugin 'joonty/vdebug'
+Plugin 'mileszs/ack.vim'
+Plugin 'vim-scripts/Command-T'
+Plugin 'kien/ctrlp.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'scrooloose/nerdtree'
+" Avoid name conflict with vim-snipmate:
+Plugin 'garbas/vim-snipmate', {'name': 'snipmate'}
+Plugin 'ervandew/supertab'
+Plugin 'vim-scripts/TaskList.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomtom/tlib_vim'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'garbas/vim-snipmate'
 
 call vundle#end()
 filetype plugin indent on
