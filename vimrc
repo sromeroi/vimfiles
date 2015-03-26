@@ -23,6 +23,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 Plugin 'myusuf3/numbers.vim'
+Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar' 
 Plugin 'godlygeek/tabular'
 Plugin 'Townk/vim-autoclose'
@@ -49,37 +50,47 @@ filetype plugin indent on
 "----------------------------------------------------------------------
 " Generic options
 "----------------------------------------------------------------------
-set tabstop=4
 set nobackup
-set sw=4
-set ai
-set sm
 set ruler
-set vb
 set novisualbell
 set noerrorbells
 set ttyfast
+set nowrap
+set autoindent
 set expandtab
-set wrap
+set tabstop=4
+set shiftwidth=4
+"set softtabstop=4
 set laststatus=2
 set number
+set wildmenu
 "set incsearch
+set showmatch
+"set cursorline
+"set cursorcolumn
 "set mouse+=a
+
+set encoding=utf-8
+set backspace=indent,eol,start
 
 let mapleader=","
 filetype plugin on
-syntax on
-hi Visual ctermfg=black ctermbg=white guifg=black guibg=white
+
+autocmd FileType html,css,sass,scss,javascript,json \
+        setlocal shiftwidth=2 softtabstop=2
+
+" Tab completion. Use CTRL+V and TAB to insert a real tab.
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
+set completeopt=menuone,longest,preview
 
 """ Showmars a-z in a given colour:
 "let g:showmarks_include="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 let g:showmarks_include="abcdefghijklmnopqrstuvwxyz"
-highlight ShowMarksHLl ctermfg=LightCyan ctermbg=NONE guifg=#40FF40 guibg=Black
-highlight ShowMarksHLu ctermfg=LightCyan ctermbg=NONE guifg=#40FF40 guibg=Black
-highlight SignColumn ctermfg=Blue ctermbg=NONE guifg=Blue guibg=Black
 
 """ Hide the Showmarks column by removing all the symbols
 nmap <F7> <ESC>:sign unplace *<CR>:delm!<CR>:delm A-Z0-9<CR>
+nmap <leader>hs <ESC>:sign unplace *<CR>:delm!<CR>:delm A-Z0-9<CR>
 
 """ Toggle Relative and Absolute line numbers
 " Enable / Disable line numbers
@@ -89,14 +100,8 @@ nnoremap <F3> :NumbersToggle<CR>
 let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
 
 """ Highlight the current cursor line
-"set cursorline
-"nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
-"hi CursorColumn cterm=NONE ctermbg=darkgray ctermfg=white guibg=darkgray guifg=white
-hi CursorLine   cterm=NONE ctermbg=darkgray ctermfg=NONE guibg=darkgray guifg=white
-nnoremap <Leader>c :set cursorline!<CR>
-
-""" Ctrl+N 2 times toggles line numbers
-"imap <C-N><C-n> :set invnumber<CR>
+nnoremap <Leader>cl :set cursorline!<CR>
+nnoremap <Leader>cc :set cursorcolumn!<CR>
 
 """ Open files in the last known position
 if has("autocmd")
@@ -111,13 +116,14 @@ nmap <leader>f <Esc>:Ack!
 map <Leader>td <Plug>TaskList
 "map <leader>g :GundoToggle<CR>
 
-" Tab completion. Use CTRL+V and TAB to insert a real tab.
-au FileType python set omnifunc=pythoncomplete#Complete
-let g:SuperTabDefaultCompletionType = "context"
-set completeopt=menuone,longest,preview
+let g:tagbar_width = 20
+nmap <leader>t :TagbarToggle<CR>
+map <F8> <ESC>:TagbarToggle<CR>
 
-" Split windows Ctrl+w - v and Ctrl+w - s and use Ctrl+w - cursor to change
+" Split windows Ctrl+w - v and Ctrl+w - s and 
+"               Ctrl+w - cursor to change
 " Use Ctrl+w - q to close current windiow.
+" Maps for Ctrl+h/j/k/l to move.
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
@@ -132,21 +138,20 @@ map <leader>p :bn<CR>
 map <leader>D :BD<CR>
 map <leader><left> :bp<CR>
 map <leader><right> :bn<CR>
-""map <leader><ESC> :BD<CR>
-
-" Nerd Tree
-let g:NERDTreeWinPos = "right"
-map <leader>n :NERDTreeToggle<CR>
-map <C-n> :NERDTreeToggle<CR>
-map <F1> :NERDTreeToggle<CR>
 
 " Insert blank line between lines for readability purposes (logs)
 map <leader>G <ESC>set noai<CR><ESC>:g/.\n\n\@!/norm o<CR>
 
+" Nerd Tree
+let g:NERDTreeWinPos = "left"
+let g:NERDTreeWinSize = 20
+nmap <leader>n :NERDTreeToggle<CR>
+map <F1> <ESC>:NERDTreeToggle<CR>
+
 " Open nertree automatically on vim startup
 " autocmd vimenter * NERDTree
 " Then go to previous (last accessed) window.
-" autocmd VimEnter * wincmd p
+" autocmd VimEnter * w,incmd p
 
 " Open nerdtree automatically if no file is specified
 " autocmd StdinReadPre * let s:std_in=1
@@ -161,24 +166,19 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " vim-autoclose
 let b:AutoCloseOn = 0
-nmap <leader>x <ESC>:AutoCloseToggle<CR>
-
-""autocmd BufNewFile,BufRead *.module,*.php,*.install,*.test set filetype=php
-""autocmd BufNewFile,BufRead *.sql,*.dump set filetype=sql
+nmap <leader>ac <ESC>:AutoCloseToggle<CR>
 
 """ Use <space> for folding in visual and normal mode
 set foldmethod=manual
 vmap <space> zf
 nmap <space> za
-""" folding colour
-highlight Folded ctermfg=black ctermbg=gray guifg=black guibg=gray
 """ Remove line number from code folding
 set foldtext=getline(v:foldstart)
-highlight LineNr ctermfg=darkgray ctermbg=black
-highlight CursorLineNr ctermfg=darkgray ctermbg=black
 
-"autocmd BufWinLeave ?* mkview
+autocmd BufWinLeave ?* mkview
 ""autocmd BufWinEnter ?* silent loadview
+autocmd BufNewFile,BufRead *.module,*.php,*.install,*.test set filetype=php
+autocmd BufNewFile,BufRead *.sql,*.dump set filetype=sql
 autocmd BufWinLeave *.module,*.inc,*.h,*.c,*.css,*.js,*.sh,*.php,*.py mkview
 autocmd BufWinEnter *.module,*.inc,*.h,*.c,*.css,*.js,*.sh,*.php,*.py silent loadview
 
@@ -186,7 +186,14 @@ autocmd BufWinEnter *.module,*.inc,*.h,*.c,*.css,*.js,*.sh,*.php,*.py silent loa
 set foldmethod=manual
 set viewoptions=folds
 
-" colours!
-set background=dark
-colorscheme molokai_sromero
+" Colours
+if &t_Co > 2 || has("gui_running")
+    syntax on
+endif
+
+if &t_Co == 256 || has("gui_running")
+    set background=dark
+    colorscheme molokai_custom
+    set colorcolumn=80
+endif
 

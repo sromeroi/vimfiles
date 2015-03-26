@@ -113,17 +113,17 @@ hi cssValueLength ctermfg=141 ctermbg=NONE cterm=NONE guifg=#ae81ff guibg=NONE g
 hi cssCommonAttr ctermfg=81 ctermbg=NONE cterm=NONE guifg=#66d9ef guibg=NONE gui=NONE
 hi cssBraces ctermfg=NONE ctermbg=NONE cterm=NONE guifg=NONE guibg=NONE gui=NONE
 
-" Customize this colour scheme
+" Customize this colour scheme with some preferred colours:
 hi Search ctermfg=black ctermbg=Yellow guifg=black guibg=Yellow cterm=NONE gui=NONE
 hi Comment ctermfg=darkblue ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
 hi Normal ctermfg=231 ctermbg=black cterm=NONE guifg=#f8f8f2 guibg=#272822 gui=NONE
 "hi String ctermfg=Yellow ctermbg=NONE cterm=NONE guifg=#e6db74 guibg=NONE gui=NONE
 
-" Custom sromero
 hi ShowMarksHLl ctermfg=LightCyan ctermbg=NONE guifg=#40FF40 guibg=Black
 hi ShowMarksHLu ctermfg=LightCyan ctermbg=NONE guifg=#40FF40 guibg=Black
 hi SignColumn ctermfg=Blue ctermbg=NONE guifg=Blue guibg=Black
 hi Folded ctermfg=black ctermbg=gray guifg=black guibg=gray
-hi LineNr ctermfg=darkgray ctermbg=black
+hi CursorLine   cterm=NONE ctermbg=darkgray ctermfg=NONE guibg=darkgray guifg=white
 hi CursorLineNr ctermfg=darkgray ctermbg=black
+hi LineNr ctermfg=blue ctermbg=black guifg=blue guibg=black
 

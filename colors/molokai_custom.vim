@@ -284,7 +284,6 @@ hi Conditional     ctermfg=161               cterm=NONE
 hi Constant        ctermfg=135               cterm=NONE
 hi String ctermfg=186 ctermbg=NONE cterm=NONE guifg=#e6db74 guibg=NONE gui=NONE
 
-" Custom sromero
 hi ShowMarksHLl ctermfg=LightCyan ctermbg=NONE guifg=#40FF40 guibg=Black
 hi ShowMarksHLu ctermfg=LightCyan ctermbg=NONE guifg=#40FF40 guibg=Black
 hi SignColumn ctermfg=Blue ctermbg=NONE guifg=Blue guibg=Black
