@@ -1,13 +1,60 @@
-""" Common options for .vimrc and .gvimrc
+" sromeroi vimrc settings
+"----------------------------------------------------------------------
+" Author: Santiago Romero - @sromeroi 
+"         http://github.com/sromeroi/vimfiles
+"
+" CHANGELOG: 
+"
+" v1.0     2015-03-26
+"          * Switch from pathogen to vundle for plugin management.
+"          * Lots of changes to vimrc file.
+"          * Thanks to Makigas for his vimrc-setup youtube video!
+"          * Uploaded to github (previously in bitbucket).
+"
+"----------------------------------------------------------------------
 
-"filetype plugin on
+set nocompatible
+
+"----------------------------------------------------------------------
+" VUNDLE
+"----------------------------------------------------------------------
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#begin()
+
+
+Plugin "myusuf3/numbers.vim"
+Plugin "majutsushi/tagbar" 
+Plugin "godlygeek/tabular"
+Plugin "Townk/vim-autoclose"
+Plugin "scrooloose/nerdcommenter"
+Plugin "scrooloose/syntastic"
+Plugin "joonty/vdebug"
+Plugin "mileszs/ack.vim"
+Plugin "vim-scripts/Command-T"
+Plugin "kien/ctrlp.vim"
+Plugin "sjl/gundo.vim"
+Plugin "scrooloose/nerdtree"
+Plugin "garbas/vim-snipmate"
+Plugin "ervandew/supertab"
+Plugin "vim-scripts/TaskList.vim"
+Plugin "altercation/vim-colors-solarized"
+Plugin "tomtom/tlib_vim"
+Plugin "MarcWeber/vim-addon-mw-utils"
+Plugin "garbas/vim-snipmate"
+
+call vundle#end()
+filetype plugin indent on
+
+"----------------------------------------------------------------------
+" Generic options
+"----------------------------------------------------------------------
 set tabstop=4
 set nobackup
 set sw=4
 set ai
 set sm
 set ruler
-set nocompatible
 set vb
 set novisualbell
 set noerrorbells
@@ -19,12 +66,7 @@ set number
 "set incsearch
 "set mouse+=a
 
-""" Load pathogen plugins
-filetype off
 let mapleader=","
-call pathogen#infect()
-call pathogen#helptags()
-
 filetype plugin on
 syntax on
 hi Visual ctermfg=black ctermbg=white guifg=black guibg=white
