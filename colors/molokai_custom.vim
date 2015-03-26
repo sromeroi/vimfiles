@@ -289,7 +289,7 @@ hi ShowMarksHLu ctermfg=LightCyan ctermbg=NONE guifg=#40FF40 guibg=Black
 hi SignColumn ctermfg=Blue ctermbg=NONE guifg=Blue guibg=Black
 hi Folded ctermfg=black ctermbg=gray guifg=black guibg=gray
 hi LineNr ctermfg=darkgray ctermbg=black
-hi CursorLineNr ctermfg=darkgray ctermbg=black
+hi CursorLineNr ctermfg=brown ctermbg=black
 hi Visual ctermfg=black ctermbg=gray
 hi Todo ctermbg=Yellow ctermfg=Black guifg=#FFFFFF guibg=bg gui=bold cterm=bold
 
