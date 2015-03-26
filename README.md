@@ -1,7 +1,9 @@
 # vimfiles
-Vim configuration resources (.vim directory tree).
+My Vim configuration resources (.vim directory tree).
 
-- Move ~/.vim as ~/vim.old
+Uses Vundle for plugin management and includes some "customized" colour schemes.
+
+- Rename ~/.vim as ~/vim.old .
 - Clone this repository as ~/.vim
 - Run "sh install.sh"
 - Profit!
