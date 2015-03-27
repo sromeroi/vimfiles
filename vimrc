@@ -209,10 +209,21 @@ endif
 
 if &t_Co == 256 || has("gui_running")
     set background=dark
-    colorscheme molokai
     let s:scriptpath = fnamemodify(resolve(expand('<sfile>:p')), ':h')
-    let s:customcolors = s:scriptpath . '/colors/molokai_custom.vim'
-    exec "source " . s:customcolors 
+
+    let s:myscheme = "molokai"
+
+    " Check if colour scheme is present
+    let s:schemepath = s:scriptpath . '/bundle/' . s:myscheme . '/colors/' . s:myscheme . '.vim'
+    if filereadable( s:schemepath )
+        exec "colorscheme " . s:myscheme
+    endif
+
+    " Check if custom changes to this schema are present
+    let s:customcolors = s:scriptpath . '/colors/' . s:myscheme . '_custom.vim'
+    if filereadable( s:customcolors )
+        exec "source " . s:customcolors 
+    endif
     set colorcolumn=80
 endif
 
