@@ -7,7 +7,7 @@ computers.
 
 Uses Vundle for plugin management and includes some "customized" colour schemes.
 
-# Installation instructions
+## Installation instructions
 
 * Rename ~/.vim as ~/vim.old.
 
@@ -31,7 +31,7 @@ Uses Vundle for plugin management and includes some "customized" colour schemes.
 * Profit!
 
 
-# How to use this repo as a base for your own vimfiles repo
+## How to use this repo as a base for your own vimfiles repo
 
 Just delete the ~/.vim/.git folder. Then you can upload the .vim folder to your github and bitbucket account following the instructions defined in those sites.
 
