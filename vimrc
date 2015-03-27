@@ -35,14 +35,24 @@ Plugin 'vim-scripts/Command-T'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'scrooloose/nerdtree'
-" Avoid name conflict with vim-snipmate:
-Plugin 'garbas/vim-snipmate', {'name': 'snipmate'}
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/TaskList.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'garbas/vim-snipmate'
+Plugin 'vim-scripts/ShowMarks'
+Plugin 'vim-scripts/bufkill.vim'
+
+" Snipmate: Requires 2 addonds and renaming the plugin
+" to avoid name conflict with vimscript's vim-snipmate:
+Plugin 'garbas/vim-snipmate', {'name': 'snipmate'}
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'garbas/vim-snipmate'
+
+" Colour schemes
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'benjaminwhite/Benokai'
+Plugin 'sickill/vim-monokai'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 filetype plugin indent on
@@ -76,8 +86,8 @@ set backspace=indent,eol,start
 let mapleader=","
 filetype plugin on
 
-autocmd FileType html,css,sass,scss,javascript,json \
-        setlocal shiftwidth=2 softtabstop=2
+autocmd FileType html,css,sass,scss,javascript,json 
+      \ setlocal shiftwidth=2 softtabstop=2
 
 " Tab completion. Use CTRL+V and TAB to insert a real tab.
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -112,13 +122,17 @@ if has("autocmd")
 endif
 
 " Vim plugins!
-nmap <leader>f <Esc>:Ack!
 map <Leader>td <Plug>TaskList
 "map <leader>g :GundoToggle<CR>
 
 let g:tagbar_width = 20
 nmap <leader>t :TagbarToggle<CR>
+nmap <leader>tags :TagbarToggle<CR>
+nmap <leader>tagbar :TagbarToggle<CR>
 map <F8> <ESC>:TagbarToggle<CR>
+
+"imap <C-C> <Plug>snipMateNextOrTrigger
+"smap <C-C> <Plug>snipMateNextOrTrigger
 
 " Split windows Ctrl+w - v and Ctrl+w - s and 
 "               Ctrl+w - cursor to change
@@ -144,7 +158,7 @@ map <leader>G <ESC>set noai<CR><ESC>:g/.\n\n\@!/norm o<CR>
 
 " Nerd Tree
 let g:NERDTreeWinPos = "left"
-let g:NERDTreeWinSize = 20
+let g:NERDTreeWinSize = 25
 nmap <leader>n :NERDTreeToggle<CR>
 map <F1> <ESC>:NERDTreeToggle<CR>
 
@@ -158,7 +172,8 @@ map <F1> <ESC>:NERDTreeToggle<CR>
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Close vim if nertree is the only window opened
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q! | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && 
+        \ b:NERDTreeType == "primary") | q! | endif
 
 " Fuzzy search
 let g:ctrlp_map = '<c-p>'
@@ -167,6 +182,7 @@ let g:ctrlp_cmd = 'CtrlP'
 " vim-autoclose
 let b:AutoCloseOn = 0
 nmap <leader>ac <ESC>:AutoCloseToggle<CR>
+nmap <leader>autoclose <ESC>:AutoCloseToggle<CR>
 
 """ Use <space> for folding in visual and normal mode
 set foldmethod=manual
@@ -193,7 +209,10 @@ endif
 
 if &t_Co == 256 || has("gui_running")
     set background=dark
-    colorscheme molokai_custom
+    colorscheme molokai
+    let s:scriptpath = fnamemodify(resolve(expand('<sfile>:p')), ':h')
+    let s:customcolors = s:scriptpath . '/colors/molokai_custom.vim'
+    exec "source " . s:customcolors 
     set colorcolumn=80
 endif
 
