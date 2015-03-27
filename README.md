@@ -1,4 +1,5 @@
-# vimfiles
+# sromeroi's vimfiles
+
 My Vim configuration resources (.vim directory tree).
 
 This repository is intended as a backup of my Vim configuration files and as
@@ -7,7 +8,7 @@ computers.
 
 Uses Vundle for plugin management and includes some "customized" colour schemes.
 
-## Installation instructions
+### Installation instructions
 
 * Rename ~/.vim as ~/vim.old.
 
@@ -21,17 +22,18 @@ Uses Vundle for plugin management and includes some "customized" colour schemes.
     git clone https://github.com/sromeroi/vimfiles.git ~/.vim
 ```
 
-* Check the install.sh script (always!) and then run it (it will rename your ~/.vimrc and ~/.gvimrc files and download the required plugins).
+* Check the install.sh script and then run it (it will rename your ~/.vimrc and ~/.gvimrc files and download the required plugins).
 
 ```
     # cd ~/.vim/
     # cat install.sh 
+    (always check what a downloaded script does in your system!)
     # sh install.sh
 ```
 * Profit!
 
 
-## How to use this repo as a base for your own vimfiles repo
+### How to use this repo as a base for your own vimfiles repo
 
 Just delete the ~/.vim/.git folder. Then you can upload the .vim folder to your github and bitbucket account following the instructions defined in those sites.
 
