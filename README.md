@@ -37,4 +37,12 @@ Uses Vundle for plugin management and includes some "customized" colour schemes.
 
 Just delete the ~/.vim/.git folder. Then you can upload the .vim folder to your github and bitbucket account following the instructions defined in those sites.
 
+### Note for the author
+
+To be able to push changes, change .git/config to point to git@github:
+
+```
+    #url = https://github.com/sromeroi/vimfiles.git
+    url = ssh://git@github.com/sromeroi/vimfiles.git
+```
 
