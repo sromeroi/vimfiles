@@ -37,9 +37,10 @@ Plugin 'sjl/gundo.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/TaskList.vim'
-Plugin 'garbas/vim-snipmate'
 Plugin 'vim-scripts/ShowMarks'
 Plugin 'vim-scripts/bufkill.vim'
+Plugin 'garbas/vim-snipmate'
+" Snipmate requirements:
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 
