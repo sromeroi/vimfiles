@@ -37,13 +37,10 @@ Plugin 'sjl/gundo.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/TaskList.vim'
-Plugin 'garbas/vim-snipmate'
 Plugin 'vim-scripts/ShowMarks'
 Plugin 'vim-scripts/bufkill.vim'
-
-" Snipmate: Requires 2 addonds and renaming the plugin
-" to avoid name conflict with vimscript's vim-snipmate:
-Plugin 'garbas/vim-snipmate', {'name': 'snipmate'}
+Plugin 'garbas/vim-snipmate'
+" Snipmate requirements:
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 
@@ -123,6 +120,8 @@ endif
 
 " Vim plugins!
 map <Leader>td <Plug>TaskList
+map <Leader>todo <Plug>TaskList
+map <Leader>tasklist <Plug>TaskList
 "map <leader>g :GundoToggle<CR>
 
 let g:tagbar_width = 20
@@ -146,7 +145,7 @@ map <c-h> <c-w>h
 " Buffer plugins. Use :e file to open a new buffer then :bX to change
 " to buffer X. With :bd you delete the current buffer and with :buffers
 " you can see a buffer list.
-map <c-b> :b
+"map <c-b> :b
 map <leader>o :bp<CR>
 map <leader>p :bn<CR>
 map <leader>D :BD<CR>
