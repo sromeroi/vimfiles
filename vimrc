@@ -156,7 +156,7 @@ map <leader><right> :bn<CR>
 map <leader>G <ESC>set noai<CR><ESC>:g/.\n\n\@!/norm o<CR>
 
 " Nerd Tree
-let g:NERDTreeWinPos = "left"
+let g:NERDTreeWinPos = "right"
 let g:NERDTreeWinSize = 25
 nmap <leader>n :NERDTreeToggle<CR>
 map <F1> <ESC>:NERDTreeToggle<CR>
