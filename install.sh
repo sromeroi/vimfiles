@@ -44,5 +44,7 @@ done
 echo -e "\n* Fetching Bundles (Plugins) configured in the vimrc file..."
 vim +PluginInstall +qall
 
+# Remove unused plugins with: vim +PluginClean
+
 echo -e "\n--- done! ---\n"
 
