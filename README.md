@@ -28,7 +28,7 @@ Uses Vundle for plugin management and includes some "customized" colour schemes.
     # cd ~/.vim/
     # cat install.sh 
     (always check what a downloaded script does in your system!)
-    # sh install.sh
+    # bash install.sh
 ```
 * Profit!
 
