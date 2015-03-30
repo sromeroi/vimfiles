@@ -5,6 +5,9 @@
 "
 " CHANGELOG: 
 "
+" v1.1     2015-03-29
+"          * Several changes to vimrc, added update/clean scripts.
+"
 " v1.0     2015-03-26
 "          * Switch from pathogen to vundle for plugin management.
 "          * Lots of changes to vimrc file.
