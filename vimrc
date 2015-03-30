@@ -43,6 +43,8 @@ Plugin 'garbas/vim-snipmate'
 " Snipmate requirements:
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
+" Vundle:
+Plugin 'gmarik/Vundle.vim', {'name': 'vundle'}
 
 " Colour schemes
 Plugin 'altercation/vim-colors-solarized'
