@@ -44,6 +44,7 @@ Plugin 'vim-scripts/TaskList.vim'
 Plugin 'vim-scripts/ShowMarks'
 Plugin 'vim-scripts/bufkill.vim'
 Plugin 'garbas/vim-snipmate'
+Plugin 'troydm/easybuffer.vim'
 " Snipmate requirements:
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -157,6 +158,7 @@ map <leader>p :bn<CR>
 map <leader>D :BD<CR>
 map <leader><left> :bp<CR>
 map <leader><right> :bn<CR>
+nmap <leader>b :EasyBuffer<CR>
 
 " Insert blank line between lines for readability purposes (logs)
 map <leader>G <ESC>set noai<CR><ESC>:g/.\n\n\@!/norm o<CR>
