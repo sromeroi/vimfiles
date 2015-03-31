@@ -203,6 +203,16 @@ autocmd BufNewFile,BufRead *.sql,*.dump set filetype=sql
 autocmd BufWinLeave *.module,*.inc,*.h,*.c,*.css,*.js,*.sh,*.php,*.py mkview
 autocmd BufWinEnter *.module,*.inc,*.h,*.c,*.css,*.js,*.sh,*.php,*.py silent loadview
 
+""" Vim Markdown
+" ]]: go to next header. <Plug>(Markdown_MoveToNextHeader)
+" [[: go to previous header. Contrast with ]c. <Plug>(Markdown_MoveToPreviousHeader)
+" ][: go to next sibling header if any. <Plug>(Markdown_MoveToNextSiblingHeader)
+" []: go to previous sibling header if any. <Plug>(Markdown_MoveToPreviousSiblingHeader)
+" ]c: go to Current header. <Plug>(Markdown_MoveToCurHeader)
+" ]u: go to parent header (Up). <Plug>(Markdown_MoveToParentHeader)
+set nofoldenable
+let g:vim_markdown_no_default_key_mappings=1
+
 """ Autosave file folds
 set foldmethod=manual
 set viewoptions=folds
