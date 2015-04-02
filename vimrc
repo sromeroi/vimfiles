@@ -83,6 +83,7 @@ set showmatch
 "set cursorline
 "set cursorcolumn
 "set mouse+=a
+set hlsearch
 
 set encoding=utf-8
 set backspace=indent,eol,start

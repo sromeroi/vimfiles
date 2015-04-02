@@ -4,6 +4,8 @@
 
 set background=dark
 
+match Todo /Todo:\|TODO:/
+
 " Customize this colour scheme
 hi Search ctermfg=black ctermbg=Yellow guifg=black guibg=Yellow cterm=NONE gui=NONE
 hi Comment ctermfg=darkblue ctermbg=NONE cterm=NONE guifg=#75715e guibg=NONE gui=NONE
