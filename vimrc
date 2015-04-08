@@ -131,6 +131,7 @@ map <Leader>td <Plug>TaskList
 map <Leader>todo <Plug>TaskList
 map <Leader>tasklist <Plug>TaskList
 "map <leader>g :GundoToggle<CR>
+map <Leader>ch <ESC>:SyntasticToggleMode<CR>
 
 let g:tagbar_width = 20
 nmap <leader>t :TagbarToggle<CR>
