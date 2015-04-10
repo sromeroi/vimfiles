@@ -245,5 +245,18 @@ if &t_Co == 256 || has("gui_running")
         exec "source " . s:customcolors 
     endif
     set colorcolumn=80
+
+    " Custom configuration for each host at ~/.vim/custom/HOSTNAME_vimrc
+    let s:host_vimrc = $HOME . '/.vim/custom/' . hostname() . '_vimrc'
+    if filereadable(s:host_vimrc)
+          exec "source " . s:host_vimrc
+    endif
+
+    " Custom configuration for a user/host pair at ~/.vim/custom/USERNAME_HOSTNAME_vimrc
+    let s:user_host_vimrc = $HOME . '/.vim/custom/' .  $USER . "_" .  hostname() . '_vimrc'
+    if filereadable(s:user_host_vimrc)
+          exec "source " . s:user_host_vimrc
+    endif
 endif
+
 
