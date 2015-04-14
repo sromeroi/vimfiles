@@ -222,6 +222,10 @@ autocmd BufNewFile,BufReadPost *.md set filetype=mkd
 set foldmethod=manual
 set viewoptions=folds
 
+""" Allow save and load tab status on Windows and Mac GUI:
+nmap <Leader>s <ESC>:mksession! ~/vim_session<CR>
+nmap <Leader>l <ESC>:source ~/vim_session<CR>
+
 " Colours
 if &t_Co > 2 || has("gui_running")
     syntax on
