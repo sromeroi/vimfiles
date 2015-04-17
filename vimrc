@@ -226,6 +226,12 @@ set viewoptions=folds
 nmap <Leader>s <ESC>:mksession! ~/vim_session<CR>
 nmap <Leader>l <ESC>:source ~/vim_session<CR>
 
+""" Unmap cursor keys!
+"noremap <Up> <nop>
+"noremap <Down> <nop>
+"noremap <Left> <nop>
+"noremap <Right> <nop>
+
 " Colours
 if &t_Co > 2 || has("gui_running")
     syntax on
