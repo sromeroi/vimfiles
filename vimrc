@@ -45,6 +45,7 @@ Plugin 'vim-scripts/ShowMarks'
 Plugin 'vim-scripts/bufkill.vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'troydm/easybuffer.vim'
+Plugin 'AndrewRadev/undoquit.vim'
 " Snipmate requirements:
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -109,14 +110,14 @@ nmap <leader>hs <ESC>:sign unplace *<CR>:delm!<CR>:delm A-Z0-9<CR>
 
 """ Toggle Relative and Absolute line numbers
 " Enable / Disable line numbers
-nmap <leader>l <Esc>:set nu<CR>:set rnu<CR>
-nmap <leader>L <Esc>:set nonu<CR>:set nornu<CR>
+nmap <leader>n1 <Esc>:set nu<CR>:set rnu<CR>
+nmap <leader>n0 <Esc>:set nonu<CR>:set nornu<CR>
 nnoremap <F3> :NumbersToggle<CR>
 let g:numbers_exclude = ['tagbar', 'gundo', 'minibufexpl', 'nerdtree']
 
 """ Highlight the current cursor line
-nnoremap <Leader>cl :set cursorline!<CR>
-nnoremap <Leader>cc :set cursorcolumn!<CR>
+nnoremap <leader>cl :set cursorline!<CR>
+nnoremap <leader>cc :set cursorcolumn!<CR>
 
 """ Open files in the last known position
 if has("autocmd")
@@ -127,11 +128,14 @@ if has("autocmd")
 endif
 
 " Vim plugins!
-map <Leader>td <Plug>TaskList
-map <Leader>todo <Plug>TaskList
-map <Leader>tasklist <Plug>TaskList
+map <leader>td <Plug>TaskList
+map <leader>todo <Plug>TaskList
+map <leader>tasklist <Plug>TaskList
 "map <leader>g :GundoToggle<CR>
-map <Leader>ch <ESC>:SyntasticToggleMode<CR>
+map <leader>ch <ESC>:SyntasticToggleMode<CR>
+
+" Or :UndoQuit
+let g:undoquit_mapping = '<C-W>u'
 
 let g:tagbar_width = 20
 nmap <leader>t :TagbarToggle<CR>
@@ -223,8 +227,8 @@ set foldmethod=manual
 set viewoptions=folds
 
 """ Allow save and load tab status on Windows and Mac GUI:
-nmap <Leader>s <ESC>:mksession! ~/vim_session<CR>
-nmap <Leader>l <ESC>:source ~/vim_session<CR>
+nmap <leader>S <ESC>:mksession! ~/vim_session<CR>
+nmap <leader>L <ESC>:source ~/vim_session<CR>
 
 """ Unmap cursor keys!
 "noremap <Up> <nop>
