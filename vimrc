@@ -1,9 +1,9 @@
 " sromeroi vimrc settings
 "----------------------------------------------------------------------
-" Author: Santiago Romero - @sromeroi 
+" Author: Santiago Romero - @sromeroi
 "         http://github.com/sromeroi/vimfiles
 "
-" CHANGELOG: 
+" CHANGELOG:
 "
 " v1.1     2015-03-29
 "          * Several changes to vimrc, added update/clean scripts.
@@ -27,7 +27,7 @@ call vundle#begin()
 
 Plugin 'myusuf3/numbers.vim'
 Plugin 'bling/vim-airline'
-Plugin 'majutsushi/tagbar' 
+Plugin 'majutsushi/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'Townk/vim-autoclose'
@@ -106,13 +106,16 @@ nnoremap k gk
 let mapleader=","
 filetype plugin on
 
-autocmd FileType html,css,sass,scss,javascript,json 
+autocmd FileType html,css,sass,scss,javascript,json
       \ setlocal shiftwidth=2 softtabstop=2
 
-" See trailing spaces (and remove EOL's $)
+" See trailing spaces (and remove EOL's $). Toggle with ,h
 set nolist
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 nmap <leader>h <ESC>:set list!<CR>
+
+" Remove trailing spaces at EOL
+nnoremap <silent> <leader>ds :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " Hide search results
 nmap <silent> <leader>/ :nohlsearch<CR>
@@ -168,7 +171,7 @@ map <F8> <ESC>:TagbarToggle<CR>
 "imap <C-C> <Plug>snipMateNextOrTrigger
 "smap <C-C> <Plug>snipMateNextOrTrigger
 
-" Split windows Ctrl+w - v and Ctrl+w - s and 
+" Split windows Ctrl+w - v and Ctrl+w - s and
 "               Ctrl+w - cursor to change
 " Use Ctrl+w - q to close current windiow.
 " Maps for Ctrl+h/j/k/l to move.
@@ -210,7 +213,7 @@ map <F1> <ESC>:NERDTreeToggle<CR>
 " autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Close vim if nertree is the only window opened
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&
         \ b:NERDTreeType == "primary") | q! | endif
 
 " Fuzzy search
@@ -281,7 +284,7 @@ if &t_Co == 256 || has("gui_running")
     " Check if custom changes to this schema are present
     let s:customcolors = s:scriptpath . '/colors/' . s:myscheme . '_custom.vim'
     if filereadable( s:customcolors )
-        exec "source " . s:customcolors 
+        exec "source " . s:customcolors
     endif
     set colorcolumn=80
 
