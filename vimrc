@@ -99,10 +99,6 @@ set backspace=indent,eol,start
 " Save as root by using sudo with w!!
 cmap w!! w !sudo tee % >/dev/null
 
-" See trailing spaces (and remove EOL's $)
-set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
-
 " On wrapped lines, go up and down in the same line (THANKS Vincent Driessen!)
 nnoremap j gj
 nnoremap k gk
@@ -112,6 +108,11 @@ filetype plugin on
 
 autocmd FileType html,css,sass,scss,javascript,json 
       \ setlocal shiftwidth=2 softtabstop=2
+
+" See trailing spaces (and remove EOL's $)
+set nolist
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+nmap <leader>h <ESC>:set list!<CR>
 
 " Hide search results
 nmap <silent> <leader>/ :nohlsearch<CR>
