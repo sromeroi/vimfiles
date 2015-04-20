@@ -150,6 +150,8 @@ map <F8> <ESC>:TagbarToggle<CR>
 "               Ctrl+w - cursor to change
 " Use Ctrl+w - q to close current windiow.
 " Maps for Ctrl+h/j/k/l to move.
+" Ctrl+w _ = maximize current window (all others to size=1)
+" Ctrl+w + and - = resize current window
 map <c-j> <c-w>j
 map <c-k> <c-w>k
 map <c-l> <c-w>l
