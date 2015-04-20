@@ -79,21 +79,42 @@ set shiftwidth=4
 set laststatus=2
 set number
 set wildmenu
+set wildignore=*.swp,*.bak,*.pyc,*.class
 "set incsearch
 set showmatch
 "set cursorline
 "set cursorcolumn
 "set mouse+=a
 set hlsearch
+set title
+set history=1000
+"set noswapfile
+set hidden
 
+" Paste mode (also works :r !cat + paste + Ctrl+D)
+set pastetoggle=<F12>
 set encoding=utf-8
 set backspace=indent,eol,start
+
+" Save as root by using sudo with w!!
+cmap w!! w !sudo tee % >/dev/null
+
+" See trailing spaces (and remove EOL's $)
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" On wrapped lines, go up and down in the same line (THANKS Vincent Driessen!)
+nnoremap j gj
+nnoremap k gk
 
 let mapleader=","
 filetype plugin on
 
 autocmd FileType html,css,sass,scss,javascript,json 
       \ setlocal shiftwidth=2 softtabstop=2
+
+" Hide search results
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Tab completion. Use CTRL+V and TAB to insert a real tab.
 autocmd FileType python set omnifunc=pythoncomplete#Complete
