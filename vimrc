@@ -26,6 +26,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 Plugin 'myusuf3/numbers.vim'
 Plugin 'bling/vim-airline'
 Plugin 'majutsushi/tagbar'
