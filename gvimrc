@@ -60,9 +60,11 @@ elseif has("gui_gtk2")
 
 elseif has("gui_macvim")
 
+    set lines=45
+    set columns=110
     set linespace=1
     set ruler
-    set guifont=Inconsolata:h13
+    set guifont=Inconsolata:h17
 
 endif
 
