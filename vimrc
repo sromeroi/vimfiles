@@ -159,7 +159,12 @@ map <leader>td <Plug>TaskList
 map <leader>todo <Plug>TaskList
 map <leader>tasklist <Plug>TaskList
 "map <leader>g :GundoToggle<CR>
-map <leader>ch <ESC>:SyntasticToggleMode<CR>
+"map <leader>ch <ESC>:SyntasticToggleMode<CR>
+map <leader>ch <ESC>:SyntasticCheck<CR> :SyntasticToggleMode<CR>
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_quiet_messages = { "type": "style" }
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 " Or :UndoQuit
 let g:undoquit_mapping = '<C-W>u'
