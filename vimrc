@@ -169,7 +169,7 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 " Or :UndoQuit
 let g:undoquit_mapping = '<C-W>u'
 
-let g:tagbar_width = 20
+let g:tagbar_width = 30
 nmap <leader>t :TagbarToggle<CR>
 nmap <leader>tags :TagbarToggle<CR>
 nmap <leader>tagbar :TagbarToggle<CR>
