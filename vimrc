@@ -266,7 +266,7 @@ nmap <leader>S <ESC>:mksession! ~/vim_session<CR>
 nmap <leader>L <ESC>:source ~/vim_session<CR>
 
 """ Remove _ from the list of characters that are part of a word (for dw, cw...)
-set iskeyword-=_
+"set iskeyword-=_
 
 """ Unmap cursor keys!
 "noremap <Up> <nop>
