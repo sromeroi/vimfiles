@@ -265,6 +265,9 @@ set viewoptions=folds
 nmap <leader>S <ESC>:mksession! ~/vim_session<CR>
 nmap <leader>L <ESC>:source ~/vim_session<CR>
 
+""" Remove _ from the list of characters that are part of a word (for dw, cw...)
+set iskeyword-=_
+
 """ Unmap cursor keys!
 "noremap <Up> <nop>
 "noremap <Down> <nop>
@@ -293,7 +296,7 @@ if &t_Co == 256 || has("gui_running")
     if filereadable( s:customcolors )
         exec "source " . s:customcolors
     endif
-    set colorcolumn=80
+    "set colorcolumn=80
 
     " Custom configuration for each host at ~/.vim/custom/HOSTNAME_vimrc
     let s:host_vimrc = $HOME . '/.vim/custom/' . hostname() . '_vimrc'
