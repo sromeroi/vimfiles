@@ -108,7 +108,8 @@ nnoremap k gk
 let mapleader=","
 filetype plugin on
 
-autocmd FileType html,css,sass,scss,javascript,json
+" removed ,javascript,
+autocmd FileType html,css,sass,scss,json
       \ setlocal shiftwidth=2 softtabstop=2
 
 " See trailing spaces (and remove EOL's $). Toggle with ,h
