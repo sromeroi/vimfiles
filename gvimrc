@@ -38,7 +38,7 @@ set lines=48
 set columns=120
 set t_Co=256
 set background=dark
-set colorcolumn=80
+set colorcolumn=0
 
 " Set font on Windows, Mac, Linux ...
 if has("win32") || has("win64")

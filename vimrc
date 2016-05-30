@@ -35,19 +35,20 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'Townk/vim-autoclose'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
-Plugin 'joonty/vdebug'
+"Plugin 'joonty/vdebug'
 Plugin 'mileszs/ack.vim'
 Plugin 'vim-scripts/Command-T'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
-Plugin 'vim-scripts/TaskList.vim'
+"Plugin 'vim-scripts/TaskList.vim'
 Plugin 'vim-scripts/ShowMarks'
 Plugin 'vim-scripts/bufkill.vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'troydm/easybuffer.vim'
 Plugin 'AndrewRadev/undoquit.vim'
+Plugin 'dahu/Insertlessly'
 " Snipmate requirements:
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -279,6 +280,7 @@ nmap <leader>L <ESC>:source ~/vim_session<CR>
 if &t_Co > 2 || has("gui_running")
     syntax on
 endif
+
 
 if &t_Co == 256 || has("gui_running")
     set background=dark
