@@ -48,10 +48,11 @@ Plugin 'vim-scripts/bufkill.vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'troydm/easybuffer.vim'
 Plugin 'AndrewRadev/undoquit.vim'
-Plugin 'dahu/Insertlessly'
+"Plugin 'dahu/Insertlessly'
 " Snipmate requirements:
 Plugin 'tomtom/tlib_vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'timakro/vim-searchant'
 " Vundle:
 Plugin 'gmarik/Vundle.vim', {'name': 'vundle'}
 
@@ -263,6 +264,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=mkd
 set foldmethod=manual
 set viewoptions=folds
 
+
 """ Allow save and load tab status on Windows and Mac GUI:
 nmap <leader>S <ESC>:mksession! ~/vim_session<CR>
 nmap <leader>L <ESC>:source ~/vim_session<CR>
@@ -314,4 +316,5 @@ if &t_Co == 256 || has("gui_running")
     endif
 endif
 
-
+""" searchant.vim
+highlight SearchCurrent ctermbg=LightGreen ctermfg=black
