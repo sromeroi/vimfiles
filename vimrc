@@ -40,7 +40,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'vim-scripts/Command-T'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'ervandew/supertab'
 "Plugin 'vim-scripts/TaskList.vim'
 Plugin 'vim-scripts/ShowMarks'
@@ -208,10 +208,22 @@ nmap <leader>b :EasyBuffer<CR>
 map <leader>G <ESC>set noai<CR><ESC>:g/.\n\n\@!/norm o<CR>
 
 " Nerd Tree
-let g:NERDTreeWinPos = "right"
-let g:NERDTreeWinSize = 25
-nmap <leader>n :NERDTreeToggle<CR>
-map <F1> <ESC>:NERDTreeToggle<CR>
+"let g:NERDTreeWinPos = "right"
+"let g:NERDTreeWinSize = 25
+"nmap <leader>n :NERDTreeToggle<CR>
+"map <F1> <ESC>:NERDTreeToggle<CR>
+
+""" Vim Explorer (replaces Nerd Tree)
+" d = create new directory
+" % = creates and opens a new file
+" D and R = Delete or Rename directory or file
+" o and v = opens the file in a horizontal or vertical split
+" c-w = + - resize splits to be the same (=), or alter size (+/-)
+let g:netrw_liststyle=3
+nmap <leader>e :Explore<CR>
+map <leader>e <ESC>:Explore<CR>
+
+
 
 " Open nertree automatically on vim startup
 " autocmd vimenter * NERDTree
